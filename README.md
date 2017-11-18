@@ -17,3 +17,6 @@ Reccomended use for best results:
 Screenshot: 
 
 <img src="https://i.imgur.com/Q0GTV9C.jpg"/>
+
+Tested on Mac OS X & Firefox v57
+Let me know about your experience on Linux or Windows! damienstewart.me@gmail.com
