@@ -1,5 +1,4 @@
 # Firefox-Powerbar
-A Firefox userChrome for FF Quantum v57+ 
 
 Firefox Powerbar: a userChrome for FF Quantum v57+
 
