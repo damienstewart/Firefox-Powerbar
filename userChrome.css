@@ -1,0 +1,341 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/*
+ * Firefox Powerbar: a userChrome for FF Quantum v57+
+ *
+ * Made by Damien Stewart https://github.com/damienstewart/
+ * 
+ * This code combines the url bar and tabs menu into one row
+ * to save screen real estate and produce a sleek look. 
+ * 
+ * Reccomended use: For best results enable compact mode and the dark theme on Firefox 57+ 
+ * Place anything you made need to access (Bookmarks Menu, Extension Shortcuts, etc.) in the top right hand corner of FF via the customizer.
+ */
+
+#urlbar-container,
+#nav-bar-overflow-button,
+#PanelUI-menu-button,
+#TabsToolbar {
+	background-color: #1f1f1f !important;
+}
+
+.tabbrowser-tab[visuallyselected="true"]:-moz-lwtheme {
+	background-color: #1f1f1f !important;
+}
+
+.toolbarbutton-1:-moz-window-inactive:not(:hover),
+#main-window:not([customizing]) .toolbarbutton-1[disabled="true"]:-moz-window-inactive {
+	opacity: 1;
+	background-color: #1f1f1f !important;
+}
+
+#PersonalToolbar, #reader-mode-button, #page-action-buttons {
+	display: none;
+}
+#urlbar:-moz-lwtheme, #navigator-toolbox .searchbar-textbox:-moz-lwtheme {
+    font-size: 11px !important;
+    padding-top: 4px !important;
+}
+.tab-close-button, .tab-background {
+    visibility: collapse !important;
+}
+#back-button,
+#forward-button,
+#pageActionButton,
+#star-button,
+#star-button-box,
+#pocket-button-box,
+#pocket-button {
+	display: none;
+}
+
+.toolbarbutton-1:-moz-window-inactive:not(:hover),
+#main-window:not([customizing]) .toolbarbutton-1[disabled="true"]:-moz-window-inactive {
+	opacity: 1;
+}
+
+#tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab > .tab-stack > .tab-background[selected="true"]:-moz-lwtheme {
+	background-attachment: scroll, fixed;
+	background-color: #1f1f1f !important;
+	background-image: linear-gradient(var(--toolbar-bgcolor), var(--toolbar-bgcolor)), var(--lwt-header-image);
+	background-position: 0 0, right top;
+	background-repeat: repeat-x, no-repeat;
+	background-size: auto 100%, auto auto;
+}
+
+#TabsToolbar,
+#browser-panel {
+	background: #1f1f1f !important;
+	color: var(--chrome-color);
+}
+
+.tab-content {
+	background-color: #1f1f1f !important;
+}
+
+#urlbar:-moz-lwtheme,
+#navigator-toolbox .searchbar-textbox:-moz-lwtheme {
+	background-color: #1f1f1f;
+	max-width: 500px;
+	height: 24px !important;
+	margin-left: 65px !important;
+  font-size:  8.5pt !important;
+	padding-top: 4px !important;
+}
+
+#identity-box {
+	display: none;
+}
+
+#urlbar[focused="true"], .searchbar-textbox[focused="true"] {
+    border-color: none !important;
+    box-shadow: none !important;
+}
+
+.toolbarbutton-1:-moz-window-inactive:not(:hover),
+#main-window:not([customizing]) .toolbarbutton-1[disabled="true"]:-moz-window-inactive {
+	opacity: 1 !important;
+	;
+}
+
+html|*.textbox-input,
+html|*.textbox-textarea {
+	margin-left: 10px !important;
+}
+
+.urlbar-input-box,
+.searchbar-textbox > .autocomplete-textbox-container > .textbox-input-box {
+	padding-left: 10px;
+}
+
+.tabbrowser-tab::after {
+    background: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+.tabbrowser-tab[visuallyselected="true"] {
+	border-top: 1px solid rgb(227, 131, 127) !important;
+  border-left: 1px solid rgb(227, 131, 127) !important;
+  border-right: 1px solid rgb(227, 131, 127) !important;
+}
+
+#main-window:-moz-any([sizemode="fullscreen"], [customize-entered]) #TabsToolbar:not([collapsed="true"]) + #nav-bar, #main-window:not([tabsintitlebar]) #TabsToolbar:not([collapsed="true"]) + #nav-bar, #TabsToolbar:not([collapsed="true"]) + #nav-bar:-moz-lwtheme {
+    border-top: none !important;
+}
+
+.tabbrowser-tab {
+	border-top: 2px solid #1f1f1f !important;
+	border-left: 0 !important;
+	border-right: 0 !important;
+}
+
+:root:-moz-lwtheme {
+	--toolbarbutton-icon-fill-opacity: .2 !important;
+}
+
+#TabsToolbar {
+	--tab-separator-image: none !important;
+}
+
+.tabbrowser-tab::before {
+	visibility: hidden !important;
+}
+
+.tabbrowser-tab::before {
+	display: none !important;
+}
+
+.titlebar-placeholder[type="pre-tabs"] {
+	border-inline-end: 0 !important;
+	opacity: 0 !important;
+}
+
+titlebar-placeholder[type="caption-buttons"] {
+	display: none !important;
+}
+
+:root {
+	/* TAB VARIABLES */
+	--bg-light: #1f1f1f;
+	--bg-dark: #1f1f1f;
+	--fg-light: #D6CCDC;
+	--fg-dark: #AAA5AD;
+	--tab-height: 26px;
+	--tab-icon-size: 8px;
+	--tab-strip-margin: -10px;
+	--tab-overlap: 0;
+	--tab-fonts: "Lemon", monospace, "Dejavu Sans";
+	--tab-font-size: 9pt;
+	--tab-text-align: center;
+	--tab-triangle: none;
+	--url-background: var(--bg-light);
+	--url-color: var(--fg-light);
+	--url-height: 18px;
+	--url-right-margin: 5px;
+	--url-fonts: "Lemon", monospace, "Dejavu Sans";
+	--url-font-size: 7pt;
+	--url-text-align: left;
+	--url-position: absolute;
+	margin-bottom: 0 !important;
+}
+
+
+/* URL-BAR */
+
+#back-button,
+#forward-button,
+#back-button *,
+#forward-button *,
+#identity-box,
+#urlbar-reload-button,
+#urlbar-stop-button,
+#urlbar-go-button,
+#PanelUI-button,
+#bookmarks-menu-button,
+#downloads-button,
+#notification-popup-box,
+#new-tab-button,
+#private-browsing-indicator,
+#search-container,
+#nav-bar-overflow-button,
+.tab-throbber,
+.tab-background-start,
+.tab-background-end,
+#window-controls,
+.tab-icon-image:not([pinned]) {
+	display: none !important;
+}
+
+.tab-drop-indicator {
+	margin-bottom: 0 !important;
+}
+
+#nav-bar {
+	position: var(--url-position) !important;
+	bottom: 0 !important;
+	width: 100% !important;
+	height: var(--url-height) !important;
+	min-height: var(--url-height) !important;
+	max-height: var(--url-height) !important;
+	margin: 0 0 0 0 !important;
+	position: fixed !important;
+	top: 0 !important;
+	left: 0 !important;
+	width: 400px !important;
+	max-width: 400px !important;
+	z-index: 100 !important;
+}
+
+#nav-bar-customization-target {
+	width: 100% !important;
+}
+
+#urlbar-wrapper {
+	width: 100% !important;
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	border-bottom: 0px solid var(--bg-light) !important;
+}
+
+#urlbar {
+	border: none !important;
+	border-radius: 0 !important;
+	margin: 0 0 0 0 !important;
+	padding: 0 2px 0 2px !important;
+	width: calc(100% + var(--url-right-margin)) !important;
+	height: var(--url-height) !important;
+	min-height: var(--url-height) !important;
+	background: var(--url-background) !important;
+	color: var(--url-color) !important;
+	font-family: var(--url-fonts) !important;
+	font-size: var(--url-font-size) !important;
+	text-align: var(--url-text-align) !important;
+}
+
+
+/* TABS */
+
+.tabbrowser-tab[fadein]:not([pinned]) {
+	min-width: 50px !important;
+	max-width: /*180px*/
+	100% !important;
+}
+
+tab {
+	font-family: var(--tab-fonts) !important;
+	height: var(--tab-height) !important;
+	min-height: var(--tab-height) !important;
+	background: var(--bg-dark) !important;
+	/*! color: red !important; */
+	font-size: var(--tab-font-size);
+	text-shadow: none !important;
+	text-align: var(--tab-text-align) !important;
+}
+
+.tabbrowser-tab label {
+	padding: 0 10px 0 10px !important;
+}
+
+.tabbrowser-tab *,
+.tabs-newtab-button * {
+	background: none !important;
+	list-style-image: none !important;
+	margin: 0 0 0 0 !important;
+	padding: 0 0 0 0 !important;
+	-moz-appearance: none !important;
+}
+
+#tabbrowser-tabs .tabbrowser-tab[pinned] .tab-stack {
+	height: var(--tab-height) !important;
+	width: 100% !important;
+}
+
+#tabbrowser-tabs .tabbrowser-arrowscrollbox .box-inherit.scrollbox-innerbox {
+	max-height: var(--tab-height) !important;
+}
+
+.scrollbutton-up,
+.scrollbutton-down {
+	border: none !important;
+}
+
+#TabsToolbar,
+#tabbrowser-tabs {
+	-moz-appearance: none !important;
+	height: var(--tab-height) !important;
+	min-height: var(--tab-height)!important;
+	margin: 0 var(--tab-strip-margin) !important;
+	background: var(--bg-dark) !important;
+	margin-left: 150px !important;
+}
+
+#TabsToolbar::after {
+	display: none !important;
+}
+
+.tabbrowser-tab::before,
+.tabbrowser-tab::after {
+	background: none !important;
+	opacity:  0 !important;
+	visibility: hidden !important;
+}
+
+#navigator-toolbox::after {
+	height: 0px !important;
+	background: var(--bg-light) !important;
+}
+
+#liberator-separator {
+	height: 0px !important;
+	background: var(--bg-light) !important;
+	border-top: 0 !important;
+}
+
+/*----- Fix for white flash on new tab -----*/
+
+tabbrowser tabpanels,
+#appcontent > #content {
+	background: var(--bg-light) !important;
+}
