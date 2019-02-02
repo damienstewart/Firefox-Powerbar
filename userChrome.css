@@ -339,3 +339,7 @@ tabbrowser tabpanels,
 #appcontent > #content {
 	background: var(--bg-light) !important;
 }
+
+.titlebar-buttonbox.titlebar-color {
+	margin-left: -138px !important;
+}
