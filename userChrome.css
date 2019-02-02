@@ -290,6 +290,7 @@ tab {
 #tabbrowser-tabs .tabbrowser-tab[pinned] .tab-stack {
 	height: var(--tab-height) !important;
 	width: 100% !important;
+	margin-left: 100px !important;
 }
 
 #tabbrowser-tabs .tabbrowser-arrowscrollbox .box-inherit.scrollbox-innerbox {
@@ -308,7 +309,7 @@ tab {
 	min-height: var(--tab-height)!important;
 	margin: 0 var(--tab-strip-margin) !important;
 	background: var(--bg-dark) !important;
-	margin-left: 150px !important;
+	margin-left: 310px !important;
 }
 
 #TabsToolbar::after {
@@ -339,7 +340,6 @@ tabbrowser tabpanels,
 #appcontent > #content {
 	background: var(--bg-light) !important;
 }
-
 .titlebar-buttonbox.titlebar-color {
-	margin-left: -138px !important;
+	margin-left: -300px !important;
 }
