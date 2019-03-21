@@ -115,9 +115,9 @@ html|*.textbox-textarea {
 }
 
 .tabbrowser-tab[visuallyselected="true"] {
-	border-top: 1px solid rgb(227, 131, 127) !important;
-  border-left: 1px solid rgb(227, 131, 127) !important;
-  border-right: 1px solid rgb(227, 131, 127) !important;
+	border-top: 1px solid #bfffaa !important;
+  border-left: 1px solid #bfffaa !important;
+  border-right: 1px solid #bfffaa !important;
 }
 
 #main-window:-moz-any([sizemode="fullscreen"], [customize-entered]) #TabsToolbar:not([collapsed="true"]) + #nav-bar, #main-window:not([tabsintitlebar]) #TabsToolbar:not([collapsed="true"]) + #nav-bar, #TabsToolbar:not([collapsed="true"]) + #nav-bar:-moz-lwtheme {
@@ -287,6 +287,10 @@ tab {
 	-moz-appearance: none !important;
 }
 
+tab.tabbrowser-tab {
+	max-height: 22px !important;
+}
+
 #tabbrowser-tabs .tabbrowser-tab[pinned] .tab-stack {
 	height: var(--tab-height) !important;
 	width: 100% !important;
@@ -295,6 +299,10 @@ tab {
 
 #tabbrowser-tabs .tabbrowser-arrowscrollbox .box-inherit.scrollbox-innerbox {
 	max-height: var(--tab-height) !important;
+}
+
+#nav-bar[downloadsbuttonshown] #urlbar-container {
+    min-height: 26px !important;
 }
 
 .scrollbutton-up,
